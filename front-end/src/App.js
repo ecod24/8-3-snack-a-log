@@ -1,9 +1,17 @@
-function App() {
+// DEPENDENCIES
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// PAGES
+import Home from "./Pages/Home";
+
+export default function App() {
   return (
     <div className="App">
-      <h1>Hello, world!</h1>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
-
-export default App;
