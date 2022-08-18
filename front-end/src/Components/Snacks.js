@@ -7,9 +7,13 @@ console.log(API)
 export default function Snacks() {
 
   const [snacks, setSnacks] = useState([]);
+  
   const getData = async () => {
-    const { data } = await axios(`${API}/snacks/`);
-    setSnacks(data.payload);
+    //const { data } = await //axios(`${API}/snacks/`);
+    await axios
+      .get(`${API}/snacks/`)
+      .then(({ data }) => setSnacks(data.payload))
+      .catch((error) => console.log(error));
   };
 
   useEffect(() => {
@@ -25,10 +29,9 @@ export default function Snacks() {
 
   return (
     <>
-    {console.log(snacks)}
-    {snacks.map((snack) => {
-      return <Snack key={snack.id} snack={snack} />;
-    })}
+      {snacks.map((snack) => {
+        return <Snack key={snack.id} snack={snack} />;
+      })}
     </>
   );
 }
