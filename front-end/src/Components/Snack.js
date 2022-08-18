@@ -6,14 +6,14 @@ export default function Snack({ snack }) {
   return (
     <article className="Snack">
       <h4>
-        {snack.name}</h4>
+        {snack.name}
         {snack.is_healthy 
           ? 
-          (<img src={heartSolid} alt='healthy food'/>) 
+          (<img className="icon" src={heartSolid} alt="healthy food" />) 
           : 
-          (<img src={heartRegular} alt='unhealthy food' />)
+          (<img className="icon" src={heartRegular} alt="unhealthy food" />)
         }
-      
+      </h4> 
       <div className="snack__image"><img src={snack.image} alt={snack.name} /></div>
       <button>
         <Link to={`/snacks/${snack.id}`}>Snack details</Link>

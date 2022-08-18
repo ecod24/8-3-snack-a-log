@@ -63,10 +63,12 @@ nav a {
   padding: 1em;display: flex;flex-wrap: wrap;justify-content: space-between;
   border: 1px solid #CDCDCD;border-radius: 10px;
 }
-.Snack H4 { 
-  margin: 0;display: block; font-size: 1em;text-align: center;
-  
+.Snack h4 { 
+  width: 100%;margin: 0;display: flow-root; font-size: 1em;text-align: center;
 }
+/* .Snack h4 > img { 
+  width: 50%;
+} */
 .Snack .snack__image { 
   width: 150px;margin: auto;padding: 1em;background-color: rgb(255, 252, 242);
 }
