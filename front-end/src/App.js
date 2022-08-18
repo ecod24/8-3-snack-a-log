@@ -8,6 +8,8 @@ import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 
+import "./App.css";
+
 export default function App() {
   return (
     <div className="App">

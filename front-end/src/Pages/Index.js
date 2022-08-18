@@ -2,9 +2,9 @@ import Snacks from "../Components/Snacks";
 
 export default function Index() {
   return (
-    <div className="Index">
-      <h2>Snacks list</h2>
+    <main>
+      <h1>Snacks list</h1>
       <Snacks />
-    </div>
+    </main>
   );
 }

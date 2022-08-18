@@ -28,10 +28,10 @@ export default function Snacks() {
   // }, []);
 
   return (
-    <>
+    <section className="Snacks">
       {snacks.map((snack) => {
         return <Snack key={snack.id} snack={snack} />;
       })}
-    </>
+    </section>
   );
 }
