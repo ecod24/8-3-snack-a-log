@@ -6,6 +6,14 @@ const {
 	createSnack,
 	deleteSnack,
 } = require("../queries/snacks");
+const {
+	checkName,
+	checkFiber,
+	checkProtein,
+	checkAddedSugar,
+	checkImage,
+	checkForNoAdditionalParams,
+} = require("../validations/snacksCheck");
 const snackController = express();
 
 snackController.get("/", async (request, response) => {
@@ -57,6 +65,23 @@ snackController.delete("/:id", async (request, response) => {
 			success: false,
 			payload: deletedSnack,
 		});
+	}
+});
+
+//TODOL fix middleware checks
+snackController.post("/", checkName, async (request, response) => {
+	try {
+		let snack = await createSnack(request.body);
+		// let { name } = snack;
+		// if (!snack[0].image) {
+		// 	snack[0].image = `https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image`;
+		// }
+		response.json({
+			success: true,
+			payload: snack,
+		});
+	} catch (error) {
+		return error;
 	}
 });
 
