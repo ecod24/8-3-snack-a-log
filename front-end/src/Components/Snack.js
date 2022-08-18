@@ -4,19 +4,20 @@ import heartSolid from "../assets/heart-solid.png"
 
 export default function Snack({ snack }) {
   return (
-    <div className="Snack">
+    <article className="Snack">
       <h4>
-        {snack.name}
+        {snack.name}</h4>
         {snack.is_healthy 
           ? 
           (<img src={heartSolid} alt='healthy food'/>) 
           : 
           (<img src={heartRegular} alt='unhealthy food' />)
         }
-      </h4>
+      
+      <div className="snack__image"><img src={snack.image} alt={snack.name} /></div>
       <button>
         <Link to={`/snacks/${snack.id}`}>Snack details</Link>
       </button>
-    </div>
+    </article>
   );
 }
