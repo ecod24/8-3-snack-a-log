@@ -6,6 +6,7 @@ const {
 	createSnack,
 	deleteSnack,
 } = require("../queries/snacks");
+const { nameFormatter } = require("../validations/snacksCheck");
 const snackController = express();
 
 snackController.get("/", async (request, response) => {
@@ -57,6 +58,25 @@ snackController.delete("/:id", async (request, response) => {
 			success: false,
 			payload: deletedSnack,
 		});
+	}
+});
+
+snackController.post("/", async (request, response) => {
+	try {
+		const obj = request.body;
+		let { name } = obj;
+		// console.log(name);
+		// name = nameFormatter(name); //wtf
+		// if (!obj.image) {
+		// 	obj.image = `https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image`;
+		// }
+		const snack = await createSnack(obj);
+		response.json({
+			success: true,
+			payload: snack,
+		});
+	} catch (error) {
+		return error;
 	}
 });
 

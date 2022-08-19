@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import heartRegular from "../assets/heart-regular.png";
+import heartSolid from "../assets/heart-solid.png";
 
 export default function SnackDetails() {
   
@@ -34,12 +36,23 @@ export default function SnackDetails() {
 
   return (
     <>
-      
-        <h2>{snack.name}</h2>
-        <h4>Fiber: {snack.fiber}</h4>
-        <h4>Protein: {snack.protein}</h4>
-        <h4>Added sugar: {snack.added_sugar}</h4>
-        
+      <article>
+        <h2>
+          {snack.name}
+          {snack.is_healthy 
+            ? 
+            (<img className="icon" src={heartSolid} alt="healthy food" />) 
+            : 
+            (<img className="icon" src={heartRegular} alt="unhealthy food" />)
+          }
+        </h2>
+        <div>Fiber: {snack.fiber}</div>
+        <div>Protein: {snack.protein}</div>
+        <div>Added sugar: {snack.added_sugar}</div>
+      </article>
+      <aside>
+      <img className="img" src={snack.image} alt={snack.name} />
+      </aside>
         
           <button>
             Back
@@ -47,10 +60,8 @@ export default function SnackDetails() {
           <button>
             Delete
           </button>
-          <button
-            href={`/snacks/${id}/edit`}
-          > 
-            Edit 
+          <button>
+            <Link to={`/snacks/${id}/edit`}>Edit Snack</Link>
           </button>
     </>
   );
