@@ -9,7 +9,6 @@ export default function Snacks() {
   const [snacks, setSnacks] = useState([]);
   
   const getData = async () => {
-    //const { data } = await //axios(`${API}/snacks/`);
     await axios
       .get(`${API}/snacks/`)
       .then(({ data }) => setSnacks(data.payload))
@@ -19,13 +18,6 @@ export default function Snacks() {
   useEffect(() => {
     getData();
   }, []);
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${API}/snacks/`)
-  //     .then(({ data }) => setSnacks(data))
-  //     .catch((error) => console.log(error));
-  // }, []);
 
   return (
     <section className="Snacks">

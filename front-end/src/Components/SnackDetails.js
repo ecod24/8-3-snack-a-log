@@ -37,15 +37,17 @@ export default function SnackDetails() {
   return (
     <>
       <article>
-        <h2>
+        <h4>
           {snack.name}
+          <span>
           {snack.is_healthy 
             ? 
             (<img className="icon" src={heartSolid} alt="healthy food" />) 
             : 
             (<img className="icon" src={heartRegular} alt="unhealthy food" />)
           }
-        </h2>
+          </span>
+        </h4>
         <div>Fiber: {snack.fiber}</div>
         <div>Protein: {snack.protein}</div>
         <div>Added sugar: {snack.added_sugar}</div>
@@ -55,9 +57,9 @@ export default function SnackDetails() {
       </aside>
         
           <button>
-            Back
+            <Link to={`/snacks`}>Back</Link>
           </button>
-          <button>
+          <button onClick={() => handleDelete()}>
             Delete
           </button>
           <button>
