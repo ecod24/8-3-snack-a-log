@@ -1,4 +1,5 @@
 const db = require("../db/dbConfig.js");
+const nameFormatter = require("../validations/snacksCheck.js");
 
 //GET all
 const getAllSnacks = async () => {
@@ -21,8 +22,22 @@ const getSnack = async (id) => {
 };
 
 //CREATE
-const createSnack = async ({ name, fiber, protein, added_sugar, is_healthy, image }) => {
+const createSnack = async (snack) => {
 	try {
+		let { name, fiber, protein, added_sugar, is_healthy, image } = snack;
+		name = nameFormatter(name);
+		if (!image) {
+			image = `https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image`;
+		}
+		if (isNaN(fiber)) {
+			fiber = 0;
+		}
+		if (isNaN(protein)) {
+			protein = 0;
+		}
+		if (isNaN(added_sugar)) {
+			added_sugar = 0;
+		}
 		return await db.one(
 			"INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
 			[name, fiber, protein, added_sugar, is_healthy, image]

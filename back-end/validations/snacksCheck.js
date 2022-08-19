@@ -1,11 +1,11 @@
 const nameFormatter = (name) => {
-	if (name.length > 2) {
-		name = name.split(" ");
-		for (let i = 0; i < name.length; i++) {
+	name = name.split(" ");
+	for (let i = 0; i < name.length; i++) {
+		if (name[i].length > 2) {
 			name[i] = capitalizeWord(name[i]);
 		}
-		name = name.join(" ");
 	}
+	name = name.join(" ");
 	return name;
 };
 
