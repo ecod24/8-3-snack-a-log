@@ -61,22 +61,36 @@ snackController.delete("/:id", async (request, response) => {
 	}
 });
 
-snackController.post("/", async (request, response) => {
+// snackController.post("/", async (request, response) => {
+// 	try {
+// 		const obj = request.body;
+// 		let { name } = obj;
+// 		// console.log(name);
+// 		// name = nameFormatter(name); //wtf
+// 		// if (!obj.image) {
+// 		// 	obj.image = `https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image`;
+// 		// }
+// 		const snack = await createSnack(obj);
+// 		response.json({
+// 			success: true,
+// 			payload: snack,
+// 		});
+// 	} catch (error) {
+// 		return error;
+// 	}
+// });
+
+snackController.post("/",  async (req, res) => {
+	const newSnack = req.body;
+
 	try {
-		const obj = request.body;
-		let { name } = obj;
-		// console.log(name);
-		// name = nameFormatter(name); //wtf
-		// if (!obj.image) {
-		// 	obj.image = `https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image`;
-		// }
-		const snack = await createSnack(obj);
-		response.json({
-			success: true,
-			payload: snack,
-		});
+		const postedSnack = await createSnack(newSnack);
+		//use postedSnack[0] because postNewSnack will return an array and
+		//the postedSnack[0] is the snack added into the database
+		res.status(200).json({ success: true, payload: postedSnack[0] });
 	} catch (error) {
-		return error;
+		console.log(error);
+		res.status(404).json({ success: false });
 	}
 });
 

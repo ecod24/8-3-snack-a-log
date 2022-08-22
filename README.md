@@ -1,11 +1,12 @@
 # Full Stack Application Pair Project
 
 ## Helpful Links
-*You and your partner should include links or images of the following resources in this section:*
 
-- [Trello Board](https://trello.com/b/9EeVndMM/snack-log-project)
-- Wireframes
-- ERDs
+_You and your partner should include links or images of the following resources in this section:_
+
+- Trello Board: [https://trello.com/b/9EeVndMM/snack-log-project]
+- Wireframes:
+- ERDs:
 
 ## Snack-a-log
 
@@ -21,10 +22,10 @@ For this project there are 40 features or functionality to build. To pass this p
 - Use unit tests to guide the building process
 - Deploy the applications online, so anyone can see them online
 
-## Expecatations
+## Expectations
 
 - Each partner should commit and push their work at least once per day (for days we have class)
-- You should edit the *Helpful Links* section of this readme to include links for your relevant project planning resources
+- You should edit the _Helpful Links_ section of this readme to include links for your relevant project planning resources
 
 ## Submitting Your Work
 
