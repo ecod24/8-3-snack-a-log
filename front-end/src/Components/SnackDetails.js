@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import heartRegular from "../assets/heart-regular.png";
 import heartSolid from "../assets/heart-solid.png";
 
 export default function SnackDetails() {
   
-
   const [snack, setSnack] = useState([]);
   let { id } = useParams();
   let navigate = useNavigate();
@@ -89,39 +88,38 @@ export default function SnackDetails() {
               </li>
               <li className="mt-10">
                 <div className="flex">
-                    <div className="flex-shrink-0">
-                        <div className="flex items-center justify-center h-10 w-10 rounded-md bg-blue-400 text-white">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                    </div>
-                    <div className="ml-4">
-                        <h5 className="text-lg leading-10 text-gray-900  font-bold">
-                          Protein: {snack.protein}g
-                        </h5>
-                        {/* <p class="mt-2 text-base leading-6 text-gray-500 dark:text-gray-300">
-                            All your orders in one place so you can manage your delivery, collection, asap and pre-orders in one place.
-                        </p> */}
-                    </div>
+                  <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-10 w-10 rounded-md bg-blue-400 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                  </div>
+                  <div className="ml-4">
+                      <h5 className="text-lg leading-10 text-gray-900  font-bold">
+                        Protein: {snack.protein}g
+                      </h5>
+                      {/* <p class="mt-2 text-base leading-6 text-gray-500 dark:text-gray-300">
+                          All your orders in one place so you can manage your delivery, collection, asap and pre-orders in one place.
+                      </p> */}
+                  </div>
                 </div>
               </li>
               <li className="mt-10">
-                  <div className="flex">
-                      <div className="flex-shrink-0">
-                          <div className="flex items-center justify-center h-10 w-10 rounded-md bg-blue-400 text-white">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          </div>
-                      </div>
-                      <div className="ml-4">
-                          <h5 className="text-lg leading-10 text-gray-900  font-bold">
-                            Added sugar: {snack.added_sugar}g
-                          </h5>
-                          
-                      </div>
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-blue-400 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    </div>
                   </div>
+                  <div className="ml-4">
+                    <h5 className="text-lg leading-10 text-gray-900  font-bold">
+                      Added sugar: {snack.added_sugar}g
+                    </h5>
+                  </div>
+                </div>
               </li>
             </ul>
             <div className="flex items-center mt-10">
@@ -150,15 +148,15 @@ export default function SnackDetails() {
           </div>
           <div className="mt-10 -mx-4 md:-mx-12 relative lg:mt-0 lg:col-start-1">
             <div className="flex-shrink-0 absolute top-2 right-2 z-50">
-            <div className=" flex 
-                          items-center 
-                          mx-auto justify-center 
-                          h-20 
-                          w-20 
-                          rounded-md 
-                          bg-indigo-200 
-                          text-white
-                          p-4"
+            <div className="flex 
+                            items-center 
+                            mx-auto justify-center 
+                            h-20 
+                            w-20 
+                            rounded-md 
+                            bg-indigo-200 
+                            text-white
+                            p-4"
             >
             {snack.is_healthy 
               ? 

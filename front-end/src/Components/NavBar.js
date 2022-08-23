@@ -1,7 +1,4 @@
-import { Link } from "react-router-dom";
-import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-
 
 export default function NavBar() {
   let navigate = useNavigate();
@@ -9,17 +6,6 @@ export default function NavBar() {
   const handleClick = () => {
     navigate(`/snacks/new`);
   }
-
-  // const classes = useStyles();
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <header className=" body-font bg-indigo-600 sticky top-0 z-50">

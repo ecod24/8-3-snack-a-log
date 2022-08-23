@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import heartRegular from "../assets/heart-regular.png";
 import heartSolid from "../assets/heart-solid.png";
@@ -17,7 +16,7 @@ export default function Snack({ snack }) {
       </h2>
       <div className="snack__image relative">
         <div className="flex-shrink-0 absolute top-2 right-2">
-          <div className=" flex 
+          <div className="flex 
                           items-center 
                           mx-auto justify-center 
                           h-12 
